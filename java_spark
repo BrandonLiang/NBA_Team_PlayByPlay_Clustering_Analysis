@@ -1,0 +1,16 @@
+#!/bin/bash
+for i in `seq 4 15`; do
+  echo $i"_Team_Summary"
+  cd /Users/brandonliang/Desktop/*5.\ NBA\ Stats\ Analytics\ Research/2016-2017\ NBA\ Simulation/$i"_Team_Summary"
+  for filename in *; do
+    if [[ $filename == 1* ]] 
+      then
+        echo $i,$filename
+        javac -cp ".:/usr/local/Cellar/apache-spark/2.0.1/libexec/jars/*" /Users/brandonliang/Desktop/*5.\ NBA\ Stats\ Analytics\ Research/2016-2017\ NBA\ Simulation/*.java
+        cd /Users/brandonliang/Desktop/*5.\ NBA\ Stats\ Analytics\ Research/2016-2017\ NBA\ Simulation
+        java -cp ".:/usr/local/Cellar/apache-spark/2.0.1/libexec/jars/*" Process_Team "$filename" "$i"
+        cd $i"_Team_Summary"
+    fi
+  done
+done
+ 
