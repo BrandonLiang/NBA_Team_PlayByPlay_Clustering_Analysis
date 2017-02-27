@@ -1,21 +1,3 @@
-/*
- *  Tresata Academy - Backend Spark Exercises
- *
- *  Note: In order to complete these exercises you must be able to do the following -
- *    RDDs
- *    - Take and manipulate elements of an RDD
- *      - Data Cleansing
- *      - String Manipulation
- *
- *    DataFrames
- *    - Print the schema of a DataFrame
- *    - Show n number of records from a DataFrame
- *    - Create and apply a User Defined Function (UDF)
- *    - Perform aggregations and sorts
- *
- * Disclaimer: It's probably a good idea to check what your data looks like in each step as you go through the exercises.
- */
-
 // Necessary imports.
 import org.apache.spark.sql.Row
 import org.apache.spark.sql.types._
