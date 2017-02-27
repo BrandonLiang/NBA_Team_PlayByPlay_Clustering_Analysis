@@ -1,0 +1,2 @@
+scalac -cp ".:/usr/local/Cellar/apache-spark/2.0.1/libexec/jars/*" Multilayer_Perception_NN.scala
+scala Multilayer_Perception_NN
