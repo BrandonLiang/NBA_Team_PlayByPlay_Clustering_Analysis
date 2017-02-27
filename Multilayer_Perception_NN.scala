@@ -25,7 +25,7 @@ object Multilayer_Perception_NN {
     val rowRDD = data.map(_.split(','))
                       .map(attributes => Row(attributes))
 
-    val dataDF = SQLContext.createDataFrame(rowRDD, schema)
+    val dataDF = spark.createDataFrame(rowRDD, schema)
 
     // Split the data into train and test
     val splits = dataDF.randomSplit(Array(0.6, 0.4), seed = 1234L)
