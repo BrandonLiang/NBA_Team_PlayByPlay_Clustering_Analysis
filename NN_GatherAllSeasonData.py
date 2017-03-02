@@ -7,6 +7,7 @@ start = int(sys.argv[1])
 end = int(sys.argv[2])
 
 set_ = []
+set_complete = []
 set_ready = []
 sample_dir = "/Users/brandonliang/Desktop/*5. NBA Stats Analytics Research/2016-2017 NBA Simulation/4_Game_BreakDown_Summary/"
 sample_team = "76ers_Game_BreakDown_Summary.csv"
@@ -45,7 +46,8 @@ def eachSeason(season):
           #Only want to include home games
           if (game["game_id"] == gameID and game["home"] == "1"):
             line[0] = gameID + "_" + team1 + "_host_" + team2
-            set_.append(line)
+            set_complete.append(line)
+            set_.append(line[1:])
             set_ready.append(line[1:])
       file_.close()
 
@@ -58,8 +60,17 @@ while (current <= end):
 filepath = "NN_Each_Game_Distribution_" + str(start) + "_" + str(end) + ".csv"
 file_ = open(filepath,"wb")
 writer = csv.writer(file_)
-writer.writerow(header)
+writer.writerow(header[1:])
 for line in set_:
+  writer.writerow(line)
+
+file_.close()
+
+filepath = "NN_Each_Game_Distribution_" + str(start) + "_" + str(end) + "_complete.csv"
+file_ = open(filepath,"wb")
+writer = csv.writer(file_)
+writer.writerow(header)
+for line in set_complete:
   writer.writerow(line)
 
 file_.close()

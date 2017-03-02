@@ -1,0 +1,3 @@
+*.class
+metastore_db/
+derby.log
