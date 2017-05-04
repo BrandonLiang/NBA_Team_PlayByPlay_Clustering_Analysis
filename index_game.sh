@@ -4,7 +4,7 @@ curl -H 'Content-Type: application/x-ndjson' -X PUT '<username>:<password>@<loca
   "mappings" : {
   "eachGame" : {
    "properties" : {
-      "gameID_opponent": {"type": "text"},
+      "gameID_opponent": {"type": "text", "fielddata":true},
 "-30 < x <= -25": {"type": "double"},
 "5 < x <= 10": {"type": "double"},
 "35 < x <= 40": {"type": "double"},
@@ -61,7 +61,7 @@ curl -H 'Content-Type: application/x-ndjson' -X PUT '<username>:<password>@<loca
 "30 < x <= 35 -": {"type": "double"},
 "Total_+_%": {"type": "double"},
 "Total_-_%": {"type": "double"},
-"W/L": {"type": "text"}
+"W/L": {"type": "text", "fielddata":true}
 }
 }
 }
